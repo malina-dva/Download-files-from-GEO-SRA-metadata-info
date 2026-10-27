@@ -2,14 +2,14 @@
 
 ## 1. Create the Conda Environment
 
-**MUST** create a dedicated Conda environment using Python 3.11.
+Create a dedicated Conda environment using Python 3.11.
 
 ```bash
 conda create -n data_download python=3.11
 conda activate data_download
 ```
 
-**MUST** ensure that `conda-forge` is configured as a Conda channel.
+Ensure that `conda-forge` is configured as a Conda channel.
 
 Check the configured channels:
 
@@ -39,13 +39,13 @@ conda install bioconda::mg-toolkit
 conda install bioconda::pysradb
 ```
 
-**MUST** activate the `data_download` environment before running any commands in the following sections.
+Activate the `data_download` environment before running any commands in the following sections.
 
 ## 3. Select a Study
 
-**MUST** identify a study hosted by the Gene Expression Omnibus (GEO) or Sequence Read Archive (SRA) before downloading data.
+Identify a study hosted by the Gene Expression Omnibus (GEO) or Sequence Read Archive (SRA) before downloading data.
 
-**MUST** identify the appropriate accession identifiers for the selected study.
+Identify the appropriate accession identifiers for the selected study.
 
 Use the accession type required by each tool:
 
@@ -53,17 +53,17 @@ Use the accession type required by each tool:
 - **SRP accession:** Identifies an SRA study.
 - **PRJNA accession:** Identifies a BioProject.
 
-**MUST NOT** assume that these accession types are interchangeable.
+Do NOT assume that these accession types are interchangeable.
 
 ## 4. Set the Output Directory
 
-**MUST** navigate to the directory in which the downloaded files or metadata should be stored, or explicitly specify the destination paths in the commands.
+Navigate to the directory in which the downloaded files or metadata should be stored, or explicitly specify the destination paths in the commands.
 
-**MUST** replace example accession identifiers and placeholder paths with values appropriate for the selected study.
+Replace example accession identifiers and placeholder paths with values appropriate for the selected study.
 
 ## 5. Download and Convert SRA Data to FASTQ
 
-**MUST** use `fasterq-dump` to convert the selected SRA run into FASTQ files.
+Use `fasterq-dump` to convert the selected SRA run into FASTQ files.
 
 Example:
 
@@ -82,11 +82,9 @@ fasterq-dump SRR3836347 \
 - Use `--threads 4` to allocate four threads to the conversion process.
 - Ensure that sufficient disk space is available before downloading and converting the data.
 
-**MUST** verify that the expected FASTQ files have been generated successfully before proceeding.
-
 ## 6. Retrieve Study Metadata
 
-**MUST** retrieve metadata for the selected study using one or both of the following methods, depending on the required metadata and available accession identifiers.
+Retrieve metadata for the selected study using one or both of the following methods, depending on the required metadata and available accession identifiers.
 
 ### Method 1: Using `mg-toolkit`
 
@@ -108,13 +106,12 @@ pysradb metadata SRP390970 > sra_metadata.tsv
 
 **MUST** replace `SRP390970` with the appropriate SRA study accession.
 
-**MUST** save the metadata output to a clearly named TSV file.
 
 The example command writes the output to `sra_metadata.tsv` in the current working directory.
 
 ## 7. Verify the Results
 
-**MUST** verify that the expected output files exist and contain data.
+Verify that the expected output files exist and contain data.
 
 Check the FASTQ output directory:
 
@@ -128,9 +125,6 @@ Check the metadata file:
 ls -lh sra_metadata.tsv
 head sra_metadata.tsv
 ```
-
-**MUST** investigate failed commands, missing files, or empty outputs before treating the download as successful.
-
 ## 8. Operational Rules
 
 - **MUST** use the `data_download` Conda environment for all operations described in this document.
@@ -139,4 +133,4 @@ head sra_metadata.tsv
 - **MUST** verify that the required output directories exist and that sufficient disk space is available.
 - **MUST** preserve the relationship between downloaded sequencing files and their corresponding study metadata.
 - **MUST NOT** assume that downloading metadata also downloads sequencing data.
-- **MUST NOT** assume that a command completed successfully without checking its exit status and expected outputs.
+
