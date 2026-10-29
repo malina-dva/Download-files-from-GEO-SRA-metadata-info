@@ -6,8 +6,8 @@ set -o pipefail
 # -----------------------------
 # Configuration
 # -----------------------------
-ACCESSION_FILE="/home/malina/Desktop/fibroblasts_RNA_seq/SRR_Acc_List_2samples.txt"
-BASE_DIR="/home/malina/Desktop/fibroblasts_RNA_seq/"
+ACCESSION_FILE="/pathto/SRR_Acc_List_2samples.txt"
+BASE_DIR="/pathtothemainoutputdirectory/"
 SRA_DIR="${BASE_DIR}/SRA"
 FASTQ_DIR="${BASE_DIR}/RNAseq_fastq"
 THREADS=4
