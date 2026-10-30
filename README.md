@@ -45,7 +45,7 @@ Activate the `data_download` environment before running any commands in the foll
 
 Identify a study hosted by the Gene Expression Omnibus (GEO) or Sequence Read Archive (SRA) before downloading data.
 
-Identify the appropriate accession identifiers for the selected study.
+Identify the appropriate accession identifiers for the selected study. (for example GSE210989 - human MRC5 fibroblasts during HCMV infection with AD169)
 
 Use the accession type required by each tool:
 
