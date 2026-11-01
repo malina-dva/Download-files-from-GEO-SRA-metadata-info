@@ -17,10 +17,12 @@ Check the configured channels:
 conda config --show channels
 ```
 
-If `conda-forge` is not listed, add it:
+If `conda-forge` or `bioconda` are not listed, add them:
 
 ```bash
+conda config --add channels bioconda
 conda config --add channels conda-forge
+
 ```
 
 ## 2. Install the Required Tools
@@ -68,7 +70,7 @@ Use `fasterq-dump` to convert the selected SRA run into FASTQ files.
 Example:
 
 ```bash
-fasterq-dump SRR3836347 \
+fasterq-dump SRR21010131 \
     --split-files \
     --threads 4 \
     --outdir /your/desired/output/directory
@@ -76,7 +78,7 @@ fasterq-dump SRR3836347 \
 
 ### Command requirements
 
-- Replace `SRR3836347` with the desired SRR accession.
+- Replace `SRR21010131` with the desired SRR accession.
 - Replace `/your/desired/output/directory` with the absolute path to the output directory.
 - Use `--split-files` to separate reads when the run contains paired-end data.
 - Use `--threads 4` to allocate four threads to the conversion process.
