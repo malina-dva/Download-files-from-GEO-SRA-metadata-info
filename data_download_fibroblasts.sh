@@ -6,7 +6,7 @@ set -o pipefail
 # -----------------------------
 # Configuration
 # -----------------------------
-ACCESSION_FILE="/pathto/SRR_Acc_List_2samples.txt"
+ACCESSION_FILE="/pathto/SRR_Acc_List.txt"
 BASE_DIR="/pathtothemainoutputdirectory/"
 SRA_DIR="${BASE_DIR}/SRA"
 FASTQ_DIR="${BASE_DIR}/RNAseq_fastq"
